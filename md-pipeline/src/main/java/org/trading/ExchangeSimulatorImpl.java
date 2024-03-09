@@ -54,7 +54,8 @@ public class ExchangeSimulatorImpl {
             BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
             // Main loop for the interactive simulation
-            while ("".equals(br.readLine())) {
+            String run = br.readLine();
+            while (run.equals("true")) {
                 // Simulating a small change in the mid-price
                 mid += random.nextDouble() - 0.5;
 
@@ -72,6 +73,7 @@ public class ExchangeSimulatorImpl {
 
                 // Sending the market data increment to the aggregator
                 in.mdi(mdi);
+                //System.out.println("new mkt data increment: " + mdi);
             }
         }
         System.out.println("Finished");
